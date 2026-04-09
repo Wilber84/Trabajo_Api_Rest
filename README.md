@@ -27,6 +27,17 @@ x-api-key: mi-clave-secreta-2024
 | DELETE | /usuarios/:id | Eliminar usuario |
 | GET | /usuarios?rol=X | Filtrar por rol |
 
+## Ejemplo de petición POST
+```
+POST /usuarios
+Content-Type: application/json
+
+{
+"nombre": "Pedro",
+"email": "pedro@test.com",
+"rol": "viewer"
+}
+```
 
 ## Diferencia entre readFileSync y readFile
 

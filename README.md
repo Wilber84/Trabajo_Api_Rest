@@ -27,9 +27,11 @@ x-api-key: mi-clave-secreta-2024
 | DELETE | /usuarios/:id | Eliminar usuario |
 | GET | /usuarios?rol=X | Filtrar por rol |
 
+
 ## Diferencia entre readFileSync y readFile
 
-- readFileSync: detiene la ejecución del programa hasta que el archivo se carga por completo en memoria.
-- readFile (async): inicia la lectura y libera el bucle de eventos, permitiendo gestionar otras peticiones mientras el sistema de archivos trabaja.
+- readFileSync: lee archivos de forma síncrona, es decir, bloquea la ejecución del programa hasta que el archivo se carga completamente en memoria. Durante ese tiempo, el servidor no puede atender otras peticiones.
 
-Serecomienda usar la versión asíncrona.
+- readFile (asíncrono): lee archivos sin bloquear el hilo principal. Mientras el archivo se procesa, el servidor puede seguir atendiendo otras solicitudes, lo que mejora el rendimiento.
+
+Se recomienda usar la versión asíncrona en entornos de producción, ya que permite manejar múltiples peticiones de manera más eficiente.
